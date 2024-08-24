@@ -11,6 +11,5 @@ exports.interceptor_cors = function (request, response, next){
         response.end();
         return;
     }
-    
     next();
 }
