@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
+const interceptor_cors = require('./middleware/interceptor_cors').interceptor_cors;
+
+
+app.use(interceptor_cors);
 
 app.get('/', (req, res) => {
   res.send('Hello world!');
