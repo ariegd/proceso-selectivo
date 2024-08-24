@@ -7,6 +7,8 @@ const interceptor_log = require('./middleware/interceptor_log').interceptor_log;
 
 app.use(interceptor_cors);
 app.use(interceptor_log);
+app.use(express.json({limit: '5mb'}));
+app.disable("x-powered-by");
 
 app.get('/', (req, res) => {
   res.send('Hello world!');
